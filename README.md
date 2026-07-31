@@ -1,6 +1,5 @@
 # Snort Network Intrusion Prevention System
 
-![Platform](https://img.shields.io/badge/Platform-VMware-blue)
 ![IPS](https://img.shields.io/badge/IPS-Snort-red)
 ![Detection](https://img.shields.io/badge/Detection-Custom%20Rules-orange)
 ![Network](https://img.shields.io/badge/Network-Security-green)
