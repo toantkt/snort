@@ -2,27 +2,28 @@
 
 ![Platform](https://img.shields.io/badge/Platform-VMware-blue)
 ![IPS](https://img.shields.io/badge/IPS-Snort-red)
-![Network](https://img.shields.io/badge/Network-Security-green)
 ![Detection](https://img.shields.io/badge/Detection-Custom%20Rules-orange)
+![Network](https://img.shields.io/badge/Network-Security-green)
 
 ## Overview
 
-This project demonstrates the deployment of an inline Intrusion Prevention System (IPS) using Snort.
+This project demonstrates the deployment and configuration of Snort as an inline Intrusion Prevention System (IPS) to detect and block malicious network traffic.
 
-The environment simulates real-world attack scenarios and focuses on developing custom detection and prevention rules to identify and block malicious network activities.
+The project focuses on developing custom detection signatures, validating rule effectiveness against real attack traffic, and evaluating signature-based prevention techniques within a controlled virtual environment.
 
 ## Objectives
 
-* Deploy Snort in inline IPS mode
-* Analyze network attack traffic
-* Develop custom Snort rules
-* Prevent exploitation attempts
-* Evaluate IPS effectiveness through security testing
+- Deploy Snort in inline IPS mode
+- Configure signature-based intrusion prevention
+- Develop custom Snort detection rules
+- Detect and block common network attacks
+- Validate IPS effectiveness through attack simulation
+- Analyze network traffic before and after rule deployment
 
 ## Repository Structure
 
 ```text
-snort-ips-lab/
+snort/
 │
 ├── img/
 │   └── topology.png 
@@ -34,68 +35,116 @@ snort-ips-lab/
 └── Report.pdf
 ```
 
-### Network Topology
+## Network Topology
 
 ![Topology](img/topology.png)
 
-## Technologies Used
+## Technology Stack
 
-* Snort IPS
-* Kali Linux
-* Metasploit Framework
-* Nmap
-* Wireshark
-* Ubuntu Server
-* VMware Workstation
+- Snort IDS/IPS
+- Kali Linux
+- Ubuntu Server
+- VMware Workstation
+- Metasploit Framework
+- Nmap
+- Wireshark
 
-## Security Controls Implemented
+## Implementation
 
-### Nmap OS Fingerprinting Detection
+### IPS Deployment
 
-Created custom Snort rules to detect and block operating system fingerprinting attempts.
+Configured Snort in inline Intrusion Prevention System (IPS) mode to inspect and actively block malicious traffic traversing the network.
 
-### PHP CGI Argument Injection Prevention
+Deployment included:
 
-Developed signatures to identify exploit traffic targeting vulnerable PHP CGI implementations.
+- Inline packet inspection
+- Rule loading
+- Traffic monitoring
+- Alert generation
+- Packet blocking
 
-### UnrealIRCd Backdoor Exploitation Prevention
+### Custom Rule Development
 
-Implemented rules to detect and prevent exploitation attempts against UnrealIRCd 3.2.8.1 backdoor vulnerabilities.
+Developed custom Snort signatures to identify and prevent known attack patterns.
 
-## Testing Methodology
+Rules were created for:
 
-### Baseline Testing
+- Nmap OS Fingerprinting
+- PHP CGI Argument Injection
+- UnrealIRCd Backdoor Exploitation
 
-* Execute attacks without IPS rules
-* Capture network traffic
-* Analyze attack behavior
+Each rule was validated using live attack traffic generated from the attacker machine.
 
-### Protection Testing
+### Attack Simulation
 
-* Deploy custom Snort rules
-* Repeat attacks
-* Verify detection and blocking actions
+Performed controlled offensive security testing to evaluate IPS detection and prevention capabilities.
 
-## Results
+Attack techniques included:
 
-| Attack              | Detection | Prevention |
-| ------------------- | --------- | ---------- |
-| Nmap OS Scan        | Yes       | Yes        |
-| PHP CGI Injection   | Yes       | Yes        |
-| UnrealIRCd Backdoor | Yes       | Yes        |
+- Network reconnaissance
+- Operating system fingerprinting
+- Remote exploitation
+- Payload delivery
+
+### Traffic Analysis
+
+Captured and analyzed network traffic to compare system behavior before and after IPS enforcement.
+
+Analysis included:
+
+- Packet inspection
+- Signature matching
+- Alert validation
+- Blocked connection verification
+
+## Validation & Testing
+
+| Attack | Detection | Prevention |
+| --------- | ----------- | ------------ |
+| Nmap OS Fingerprinting | ✅ | ✅ |
+| PHP CGI Argument Injection | ✅ | ✅ |
+| UnrealIRCd Backdoor Exploitation | ✅ | ✅ |
 
 ## Key Findings
 
-* Signature-based IPS can effectively block known attack patterns.
-* Rule tuning is necessary to minimize false positives.
-* Inline deployment provides immediate protection against network-based attacks.
+- Snort successfully detects and blocks known attack signatures when deployed in inline IPS mode.
+- Well-designed custom rules significantly improve protection against targeted attack techniques.
+- Signature tuning is essential to minimize false positives while maintaining detection accuracy.
+- Packet-level analysis provides valuable insight into rule behavior and attack characteristics.
 
-## Skills Demonstrated
+## Skills Developed
 
-* Intrusion Detection Systems (IDS)
-* Intrusion Prevention Systems (IPS)
-* Snort Rule Development
-* Packet Analysis
-* Network Security
-* Attack Simulation
-* Security Testing
+### Network Security
+
+- Intrusion Prevention Systems (IPS)
+- Signature-Based Detection
+- Network Traffic Inspection
+- Packet Analysis
+
+### Detection Engineering
+
+- Snort Rule Development
+- Signature Tuning
+- Rule Validation
+- False Positive Analysis
+
+### Offensive Security
+
+- Nmap Reconnaissance
+- Exploit Validation
+- Attack Simulation
+- Penetration Testing
+
+### Security Testing
+
+- IPS Evaluation
+- Detection Validation
+- Security Control Testing
+- Attack Replay
+
+### Digital Forensics
+
+- Packet Capture Analysis
+- Alert Investigation
+- Network Evidence Collection
+- Traffic Verification
