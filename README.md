@@ -41,12 +41,12 @@ snort/
 ## Technology Stack
 
 - Snort IDS/IPS
-- Kali Linux
-- Ubuntu Server
-- VMware Workstation
 - Metasploit Framework
 - Nmap
 - Wireshark
+- VMware Workstation
+- Kali Linux
+- Ubuntu Server
 
 ## Implementation
 
